@@ -6,13 +6,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Threequals />
+        <Equals />
       </div>
     );
   }
 }
 
-class Threequals extends React.Component {
+class Equals extends React.Component {
   constructor(props) {
     super(props);
 
