@@ -44,13 +44,13 @@ class Threequals extends React.Component {
     };
   }
 
-  displayName = value =>
+  displayName = (value, scope) =>
     typeof value === 'string' || value instanceof String ? (
-      <th scope="col" key={value}>
+      <th scope={scope} key={value}>
         "{`${value}`}"
       </th>
     ) : (
-      <th scope="col" key={value}>{`${value}`}</th>
+      <th scope={scope} key={value}>{`${value}`}</th>
     );
 
   render() {
@@ -59,14 +59,14 @@ class Threequals extends React.Component {
         <thead>
           <tr>
             <td />
-            {this.state.axis.map(value => this.displayName(value))}
+            {this.state.axis.map(value => this.displayName(value, 'col'))}
           </tr>
         </thead>
         <tbody>
           {this.state.dataModel.map((row, index) => {
             return (
               <tr key={row}>
-                <th scope="row">{this.displayName(this.state.axis[index])}</th>
+                {this.displayName(this.state.axis[index], 'row')}
                 {row.map(boolean => {
                   return (
                     <td
