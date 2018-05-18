@@ -110,8 +110,8 @@ class Threequals extends React.Component {
                         key={index}
                         style={{
                           background: cell[this.state.view] ? 'green' : 'white',
-                          width: '50px',
-                          height: '50px',
+                          width: '30px',
+                          height: '30px',
                           border: '1px solid lightgray',
                         }}
                       />
