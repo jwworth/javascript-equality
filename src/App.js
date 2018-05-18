@@ -79,47 +79,43 @@ class Threequals extends React.Component {
   };
 
   render() {
+    const { axis, dataModel } = this.state;
+
     return (
       <React.Fragment>
-        <button onClick={this.toggleView}>{this.nextView()}</button>
         <table>
           <thead>
             <tr>
               <td />
-              {this.state.axis.map((value, index) => {
-                return (
-                  <th scope="col" key={value}>
-                    {this.displayName(value)}
-                  </th>
-                );
-              })}
+              {axis.map((value, index) => (
+                <th scope="col" key={index}>
+                  {this.displayName(value)}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            {this.state.dataModel.map((row, index) => {
-              return (
-                <tr key={index}>
-                  <th scope="row">
-                    {this.displayName(this.state.axis[index])}
-                  </th>
-                  {row.map((cell, index) => {
-                    return (
-                      <td
-                        key={index}
-                        style={{
-                          background: cell[this.state.view] ? 'green' : 'white',
-                          width: '30px',
-                          height: '30px',
-                          border: '1px solid lightgray',
-                        }}
-                      />
-                    );
-                  })}
-                </tr>
-              );
-            })}
+            {dataModel.map((row, index) => (
+              <tr key={index}>
+                <th scope="row">
+                  {this.displayName(this.state.axis[index])}
+                </th>
+                {row.map((cell, index) => (
+                  <td
+                    key={index}
+                    style={{
+                      background: cell[this.state.view] ? 'green' : 'white',
+                      width: '30px',
+                      height: '30px',
+                      border: '1px solid lightgray',
+                    }}
+                  />
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
+        <button onClick={this.toggleView}>{this.nextView()}</button>
       </React.Fragment>
     );
   }
