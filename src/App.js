@@ -23,9 +23,9 @@ class Equals extends React.Component {
   constructor(props) {
     super(props);
 
-    const onePartedArray = this.axis().map(() => this.axis().slice(0));
+    const comparatorArray = this.axis().map(() => this.axis().slice(0));
     const dataModel = this.axis().map((xValue, index) =>
-      onePartedArray[index].map(yValue => ({
+      comparatorArray[index].map(yValue => ({
         // eslint-disable-next-line
         twoquals: yValue == xValue,
         threequals: yValue === xValue,
