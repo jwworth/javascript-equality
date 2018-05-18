@@ -64,27 +64,17 @@ class Threequals extends React.Component {
 
   nextView = () => (this.state.view === 'twoquals' ? 'threequals' : 'twoquals');
 
-  displayName = (value, scope) => {
-    if (typeof value === 'string' || value instanceof String) {
-      return (
-        <th scope={scope} key={value}>
-          "{`${value}`}"
-        </th>
-      );
-    } else if (typeof value === 'array' || value instanceof Array) {
-      return (
-        <th scope={scope} key={value}>
-          {JSON.stringify(value)}
-        </th>
-      );
-    } else if (typeof value === 'object' || value instanceof Object) {
-      return (
-        <th scope={scope} key={value}>
-          {JSON.stringify(value)}
-        </th>
-      );
+  displayName = value => {
+    if (
+      typeof value === 'object' ||
+      value instanceof Object ||
+      value instanceof Array ||
+      typeof value === 'string' ||
+      value instanceof String
+    ) {
+      return JSON.stringify(value);
     } else {
-      return <th scope={scope} key={value}>{`${value}`}</th>;
+      return `${value}`;
     }
   };
 
@@ -96,14 +86,22 @@ class Threequals extends React.Component {
           <thead>
             <tr>
               <td />
-              {this.state.axis.map(value => this.displayName(value, 'col'))}
+              {this.state.axis.map((value, index) => {
+                return (
+                  <th scope="col" key={value}>
+                    {this.displayName(value)}
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
             {this.state.dataModel.map((row, index) => {
               return (
                 <tr key={index}>
-                  {this.displayName(this.state.axis[index], 'row')}
+                  <th scope="row">
+                    {this.displayName(this.state.axis[index])}
+                  </th>
                   {row.map((cell, index) => {
                     return (
                       <td
