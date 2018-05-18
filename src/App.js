@@ -29,7 +29,6 @@ class Threequals extends React.Component {
 
     this.state = {
       axis,
-      comparator: '===',
       dataModel,
     };
   }
@@ -49,9 +48,21 @@ class Threequals extends React.Component {
           {this.state.dataModel.map((row, index) => {
             return (
               <tr key={row}>
-                <th scope="row">{`${this.state.axis[index]}`}</th>
+                <th scope="row" style={{ height: '40px' }}>{`${this.state.axis[
+                  index
+                ]}`}</th>
                 {row.map(boolean => {
-                  return <td key={boolean}>{boolean}</td>;
+                  return (
+                    <td
+                      key={boolean}
+                      style={{
+                        background: boolean === 1 ? 'lightblue' : 'white',
+                        width: '40px',
+                        height: '40x',
+                        border: '1px solid lightgray',
+                      }}
+                    />
+                  );
                 })}
               </tr>
             );
