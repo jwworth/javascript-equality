@@ -16,7 +16,23 @@ class Threequals extends React.Component {
   constructor(props) {
     super(props);
 
-    const axis = [true, false, 1, 0, -1, 'true', 'false'];
+    const axis = [
+      true,
+      false,
+      1,
+      0,
+      -1,
+      'true',
+      'false',
+      '1',
+      '0',
+      '-1',
+      '',
+      null,
+      undefined,
+      Infinity,
+      -Infinity,
+    ];
     const onePartedArray = axis.map(() => axis.slice(0));
     const dataModel = axis.map((xValue, index) =>
       onePartedArray[index].map(yValue => (yValue === xValue ? 1 : 0))
@@ -50,17 +66,15 @@ class Threequals extends React.Component {
           {this.state.dataModel.map((row, index) => {
             return (
               <tr key={row}>
-                <th scope="row" style={{ height: '40px' }}>{`${this.state.axis[
-                  index
-                ]}`}</th>
+                <th scope="row">{this.displayName(this.state.axis[index])}</th>
                 {row.map(boolean => {
                   return (
                     <td
                       key={boolean}
                       style={{
                         background: boolean === 1 ? 'lightblue' : 'white',
-                        width: '40px',
-                        height: '40x',
+                        width: '50px',
+                        height: '50px',
                         border: '1px solid lightgray',
                       }}
                     />
