@@ -16,32 +16,8 @@ class Equals extends React.Component {
   constructor(props) {
     super(props);
 
-    const axis = () => [
-      true,
-      false,
-      1,
-      0,
-      -1,
-      'true',
-      'false',
-      '1',
-      '0',
-      '-1',
-      '',
-      null,
-      undefined,
-      Infinity,
-      -Infinity,
-      [],
-      {},
-      [[]],
-      [0],
-      [1],
-      NaN,
-    ];
-
-    const onePartedArray = axis().map(() => axis().slice(0));
-    const dataModel = axis().map((xValue, index) =>
+    const onePartedArray = this.axis().map(() => this.axis().slice(0));
+    const dataModel = this.axis().map((xValue, index) =>
       onePartedArray[index].map(yValue => {
         return {
           twoquals: yValue == xValue,
@@ -51,7 +27,7 @@ class Equals extends React.Component {
     );
 
     this.state = {
-      axis: axis(),
+      axis: this.axis(),
       dataModel,
       view: 'twoquals',
     };
@@ -61,6 +37,30 @@ class Equals extends React.Component {
     const newView = this.nextView();
     this.setState({ view: newView });
   };
+
+  axis = () => [
+    true,
+    false,
+    1,
+    0,
+    -1,
+    'true',
+    'false',
+    '1',
+    '0',
+    '-1',
+    '',
+    null,
+    undefined,
+    Infinity,
+    -Infinity,
+    [],
+    {},
+    [[]],
+    [0],
+    [1],
+    NaN,
+  ];
 
   nextView = () => (this.state.view === 'twoquals' ? 'threequals' : 'twoquals');
 
