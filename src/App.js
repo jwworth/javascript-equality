@@ -94,7 +94,7 @@ class Equals extends React.Component {
         }}
       >
         <div style={{ paddingBottom: '30px' }}>
-          <h1>{this.state.view}</h1>
+          <h1>{view}</h1>
         </div>
         <table style={{ margin: '0 auto', marginBottom: '20px' }}>
           <thead>
