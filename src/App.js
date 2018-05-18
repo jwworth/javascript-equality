@@ -93,7 +93,10 @@ class Equals extends React.Component {
           padding: '50px',
         }}
       >
-        <table>
+        <div style={{ paddingBottom: '30px' }}>
+          <h1>{this.state.view}</h1>
+        </div>
+        <table style={{ margin: '0 auto', marginBottom: '20px' }}>
           <thead>
             <tr>
               <td />
@@ -122,7 +125,7 @@ class Equals extends React.Component {
                   <td
                     key={index}
                     style={{
-                      background: cell[view] ? 'magenta' : 'white',
+                      background: cell[view] ? '#654EA3' : '#fff',
                       width: '20px',
                       height: '20px',
                       border: '1px solid lightgray',
