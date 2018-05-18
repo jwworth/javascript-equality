@@ -30,6 +30,7 @@ class Threequals extends React.Component {
     });
 
     this.state = {
+      comparator: '===',
       dataModel,
     };
   }
@@ -38,11 +39,15 @@ class Threequals extends React.Component {
     return (
       <table>
         <tbody>
-          {this.state.dataModel.map((row, index) => {
+          {this.state.dataModel.map(row => {
             return (
-              <tr key={index}>
-                {row.map((pairing, index) => {
-                  return <td>{pairing}</td>;
+              <tr key={row}>
+                {row.map(pairing => {
+                  return (
+                    <td key={pairing}>
+                      {pairing} {this.state.comparator}
+                    </td>
+                  );
                 })}
               </tr>
             );
