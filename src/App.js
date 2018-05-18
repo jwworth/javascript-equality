@@ -12,6 +12,7 @@ class App extends React.Component {
           color: '#3d3d3d',
         }}
       >
+        <h1>JavaScript Equality</h1>
         <Equals />
       </div>
     );
@@ -90,11 +91,10 @@ class Equals extends React.Component {
       <div
         style={{
           display: 'inlineBlock',
-          padding: '50px',
         }}
       >
         <div style={{ paddingBottom: '30px' }}>
-          <h1>{view}</h1>
+          <h2>{view}</h2>
         </div>
         <table style={{ margin: '0 auto', marginBottom: '20px' }}>
           <thead>
@@ -128,7 +128,7 @@ class Equals extends React.Component {
                       background: cell[view] ? '#654EA3' : '#fff',
                       width: '20px',
                       height: '20px',
-                      border: '1px solid lightgray',
+                      border: '1px solid #d3d3d3',
                     }}
                   />
                 ))}
