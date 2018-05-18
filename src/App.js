@@ -24,7 +24,7 @@ class Threequals extends React.Component {
     const onePartedArray = axis.map(() => axis.slice(0));
 
     const dataModel = axis.map((xValue, index) =>
-      onePartedArray[index].map(number => `${xValue} === ${number}`)
+      onePartedArray[index].map(yValue => (yValue === xValue ? 1 : 0))
     );
 
     this.state = {
@@ -50,8 +50,8 @@ class Threequals extends React.Component {
             return (
               <tr key={row}>
                 <th scope="row">{`${this.state.axis[index]}`}</th>
-                {row.map(pairing => {
-                  return <td key={pairing}>{pairing}</td>;
+                {row.map(boolean => {
+                  return <td key={boolean}>{boolean}</td>;
                 })}
               </tr>
             );
