@@ -20,7 +20,7 @@ class Threequals extends React.Component {
   constructor(props) {
     super(props);
 
-    const axis = [true, false, 1];
+    const axis = [true, false, 1, 0];
     const onePartedArray = axis.map(() => axis.slice(0));
 
     const dataModel = axis.map((xValue, index) =>
