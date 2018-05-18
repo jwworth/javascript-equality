@@ -20,14 +20,12 @@ class Threequals extends React.Component {
   constructor(props) {
     super(props);
 
-    const numbers = ['1', '2', '3'];
-    const letters = ['a', 'b', 'c'];
+    const axis = [true, false, 1];
+    const onePartedArray = axis.map(() => axis.slice(0));
 
-    const numbersArray = [['1', '2', '3'], ['1', '2', '3'], ['1', '2', '3']];
-
-    const dataModel = letters.map((letter, index) => {
-      return numbersArray[index].map(number => number + letter);
-    });
+    const dataModel = axis.map((xValue, index) =>
+      onePartedArray[index].map(number => `${xValue} === ${number}`)
+    );
 
     this.state = {
       comparator: '===',
@@ -43,11 +41,7 @@ class Threequals extends React.Component {
             return (
               <tr key={row}>
                 {row.map(pairing => {
-                  return (
-                    <td key={pairing}>
-                      {pairing} {this.state.comparator}
-                    </td>
-                  );
+                  return <td key={pairing}>{pairing}</td>;
                 })}
               </tr>
             );
