@@ -16,7 +16,7 @@ class Threequals extends React.Component {
   constructor(props) {
     super(props);
 
-    const axis = [
+    const axis = () => [
       true,
       false,
       1,
@@ -32,14 +32,27 @@ class Threequals extends React.Component {
       undefined,
       Infinity,
       -Infinity,
+      [],
+      {},
+      [[]],
+      [0],
+      [1],
+      NaN,
     ];
-    const onePartedArray = axis.map(() => axis.slice(0));
-    const dataModel = axis.map((xValue, index) =>
-      onePartedArray[index].map(yValue => (yValue === xValue ? 1 : 0))
+
+    const onePartedArray = axis().map(() => axis().slice(0));
+    const dataModel = axis().map((xValue, index) =>
+      onePartedArray[index].map(yValue => {
+        if (yValue == xValue) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
     );
 
     this.state = {
-      axis,
+      axis: axis(),
       dataModel,
     };
   }
