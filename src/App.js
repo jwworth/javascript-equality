@@ -58,11 +58,11 @@ class Threequals extends React.Component {
   }
 
   toggleView = () => {
-    const { view } = this.state;
-    const newView = view === 'twoquals' ? 'threequals' : 'twoquals';
-
+    const newView = this.nextView();
     this.setState({ view: newView });
   };
+
+  nextView = () => (this.state.view === 'twoquals' ? 'threequals' : 'twoquals');
 
   displayName = (value, scope) => {
     if (typeof value === 'string' || value instanceof String) {
@@ -91,7 +91,7 @@ class Threequals extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <button onClick={this.toggleView}>Toggle View</button>
+        <button onClick={this.toggleView}>{this.nextView()}</button>
         <table>
           <thead>
             <tr>
