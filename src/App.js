@@ -84,6 +84,8 @@ class Equals extends React.Component {
     }
   };
 
+  viewIcon = view => (view === 'twoquals' ? "('==')" : "('===')");
+
   render() {
     const { axis, dataModel, view } = this.state;
 
@@ -94,7 +96,7 @@ class Equals extends React.Component {
         }}
       >
         <div style={{ paddingBottom: '30px' }}>
-          <h2>{view}</h2>
+          <h2>{view} {this.viewIcon(view)}</h2>
         </div>
         <table style={{ margin: '0 auto', marginBottom: '20px' }}>
           <thead>
