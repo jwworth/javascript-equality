@@ -28,6 +28,7 @@ class Threequals extends React.Component {
     );
 
     this.state = {
+      axis,
       comparator: '===',
       dataModel,
     };
@@ -36,10 +37,19 @@ class Threequals extends React.Component {
   render() {
     return (
       <table>
+        <thead>
+          <tr>
+            <td />
+            {this.state.axis.map(value => (
+              <th scope="col" key={value}>{`${value}`}</th>
+            ))}
+          </tr>
+        </thead>
         <tbody>
-          {this.state.dataModel.map(row => {
+          {this.state.dataModel.map((row, index) => {
             return (
               <tr key={row}>
+                <th scope="row">{`${this.state.axis[index]}`}</th>
                 {row.map(pairing => {
                   return <td key={pairing}>{pairing}</td>;
                 })}
