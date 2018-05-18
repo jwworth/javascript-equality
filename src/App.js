@@ -18,12 +18,11 @@ class Equals extends React.Component {
 
     const onePartedArray = this.axis().map(() => this.axis().slice(0));
     const dataModel = this.axis().map((xValue, index) =>
-      onePartedArray[index].map(yValue => {
-        return {
-          twoquals: yValue == xValue,
-          threequals: yValue === xValue,
-        };
-      })
+      onePartedArray[index].map(yValue => ({
+        // eslint-disable-next-line
+        twoquals: yValue == xValue,
+        threequals: yValue === xValue,
+      }))
     );
 
     this.state = {
