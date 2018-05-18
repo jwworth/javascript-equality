@@ -88,7 +88,15 @@ class Equals extends React.Component {
             <tr>
               <td />
               {axis.map((value, index) => (
-                <th scope="col" key={index}>
+                <th
+                  scope="col"
+                  key={index}
+                  style={{
+                    transform: 'rotate(-90deg)',
+                    maxWidth: '20px',
+                    maxHeight: '20px',
+                  }}
+                >
                   {this.displayName(value)}
                 </th>
               ))}
@@ -105,8 +113,8 @@ class Equals extends React.Component {
                     key={index}
                     style={{
                       background: cell[this.state.view] ? 'green' : 'white',
-                      width: '30px',
-                      height: '30px',
+                      width: '20px',
+                      height: '20px',
                       border: '1px solid lightgray',
                     }}
                   />
