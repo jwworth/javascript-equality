@@ -1,11 +1,17 @@
-import './App.css';
+import './normalize.css';
+import React from 'react';
 
-import React, { Component } from 'react';
-
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div
+        style={{
+          padding: '30px',
+          textAlign: 'center',
+          fontSize: '14px',
+          color: 'gray',
+        }}
+      >
         <Equals />
       </div>
     );
@@ -78,10 +84,15 @@ class Equals extends React.Component {
   };
 
   render() {
-    const { axis, dataModel } = this.state;
+    const { axis, dataModel, view } = this.state;
 
     return (
-      <React.Fragment>
+      <div
+        style={{
+          display: 'inlineBlock',
+          padding: '50px',
+        }}
+      >
         <table>
           <thead>
             <tr>
@@ -105,13 +116,13 @@ class Equals extends React.Component {
             {dataModel.map((row, index) => (
               <tr key={index}>
                 <th scope="row">
-                  {this.displayName(this.state.axis[index])}
+                  {this.displayName(axis[index])}
                 </th>
                 {row.map((cell, index) => (
                   <td
                     key={index}
                     style={{
-                      background: cell[this.state.view] ? 'green' : 'white',
+                      background: cell[view] ? 'magenta' : 'white',
                       width: '20px',
                       height: '20px',
                       border: '1px solid lightgray',
@@ -123,7 +134,7 @@ class Equals extends React.Component {
           </tbody>
         </table>
         <button onClick={this.toggleView}>{this.nextView()}</button>
-      </React.Fragment>
+      </div>
     );
   }
 }
