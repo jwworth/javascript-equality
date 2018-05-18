@@ -43,7 +43,7 @@ class Threequals extends React.Component {
     const onePartedArray = axis().map(() => axis().slice(0));
     const dataModel = axis().map((xValue, index) =>
       onePartedArray[index].map(yValue => {
-        if (yValue == xValue) {
+        if (yValue === xValue) {
           return 1;
         } else {
           return 0;
@@ -57,14 +57,29 @@ class Threequals extends React.Component {
     };
   }
 
-  displayName = (value, scope) =>
-    typeof value === 'string' || value instanceof String ? (
-      <th scope={scope} key={value}>
-        "{`${value}`}"
-      </th>
-    ) : (
-      <th scope={scope} key={value}>{`${value}`}</th>
-    );
+  displayName = (value, scope) => {
+    if (typeof value === 'string' || value instanceof String) {
+      return (
+        <th scope={scope} key={value}>
+          "{`${value}`}"
+        </th>
+      );
+    } else if (typeof value === 'array' || value instanceof Array) {
+      return (
+        <th scope={scope} key={value}>
+          {JSON.stringify(value)}
+        </th>
+      );
+    } else if (typeof value === 'object' || value instanceof Object) {
+      return (
+        <th scope={scope} key={value}>
+          {JSON.stringify(value)}
+        </th>
+      );
+    } else {
+      return <th scope={scope} key={value}>{`${value}`}</th>;
+    }
+  };
 
   render() {
     return (
