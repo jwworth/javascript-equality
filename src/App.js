@@ -9,7 +9,7 @@ class App extends React.Component {
           padding: '30px',
           textAlign: 'center',
           fontSize: '14px',
-          color: 'gray',
+          color: '#3d3d3d',
         }}
       >
         <Equals />
