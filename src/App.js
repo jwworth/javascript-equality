@@ -43,19 +43,26 @@ class Threequals extends React.Component {
     const onePartedArray = axis().map(() => axis().slice(0));
     const dataModel = axis().map((xValue, index) =>
       onePartedArray[index].map(yValue => {
-        if (yValue === xValue) {
-          return 1;
-        } else {
-          return 0;
-        }
+        return {
+          twoquals: yValue == xValue,
+          threequals: yValue === xValue,
+        };
       })
     );
 
     this.state = {
       axis: axis(),
       dataModel,
+      view: 'twoquals',
     };
   }
+
+  toggleView = () => {
+    const { view } = this.state;
+    const newView = view === 'twoquals' ? 'threequals' : 'twoquals';
+
+    this.setState({ view: newView });
+  };
 
   displayName = (value, scope) => {
     if (typeof value === 'string' || value instanceof String) {
@@ -83,36 +90,39 @@ class Threequals extends React.Component {
 
   render() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <td />
-            {this.state.axis.map(value => this.displayName(value, 'col'))}
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.dataModel.map((row, index) => {
-            return (
-              <tr key={row}>
-                {this.displayName(this.state.axis[index], 'row')}
-                {row.map(boolean => {
-                  return (
-                    <td
-                      key={boolean}
-                      style={{
-                        background: boolean === 1 ? 'lightblue' : 'white',
-                        width: '50px',
-                        height: '50px',
-                        border: '1px solid lightgray',
-                      }}
-                    />
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <React.Fragment>
+        <button onClick={this.toggleView}>Toggle View</button>
+        <table>
+          <thead>
+            <tr>
+              <td />
+              {this.state.axis.map(value => this.displayName(value, 'col'))}
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.dataModel.map((row, index) => {
+              return (
+                <tr key={index}>
+                  {this.displayName(this.state.axis[index], 'row')}
+                  {row.map((cell, index) => {
+                    return (
+                      <td
+                        key={index}
+                        style={{
+                          background: cell[this.state.view] ? 'green' : 'white',
+                          width: '50px',
+                          height: '50px',
+                          border: '1px solid lightgray',
+                        }}
+                      />
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </React.Fragment>
     );
   }
 }
