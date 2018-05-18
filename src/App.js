@@ -20,9 +20,8 @@ class Threequals extends React.Component {
   constructor(props) {
     super(props);
 
-    const axis = [true, false, 1, 0];
+    const axis = [true, false, 1, 0, -1, 'true', 'false'];
     const onePartedArray = axis.map(() => axis.slice(0));
-
     const dataModel = axis.map((xValue, index) =>
       onePartedArray[index].map(yValue => (yValue === xValue ? 1 : 0))
     );
@@ -33,15 +32,22 @@ class Threequals extends React.Component {
     };
   }
 
+  displayName = value =>
+    typeof value === 'string' || value instanceof String ? (
+      <th scope="col" key={value}>
+        "{`${value}`}"
+      </th>
+    ) : (
+      <th scope="col" key={value}>{`${value}`}</th>
+    );
+
   render() {
     return (
       <table>
         <thead>
           <tr>
             <td />
-            {this.state.axis.map(value => (
-              <th scope="col" key={value}>{`${value}`}</th>
-            ))}
+            {this.state.axis.map(value => this.displayName(value))}
           </tr>
         </thead>
         <tbody>
