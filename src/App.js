@@ -38,11 +38,6 @@ class EqualityChart extends React.Component {
     };
   }
 
-  toggleView = () => {
-    const newView = this.nextView();
-    this.setState({ view: newView });
-  };
-
   axis = () => [
     true,
     false,
@@ -137,11 +132,11 @@ class EqualityChart extends React.Component {
         </table>
 
         <div style={{ marginBottom: '20px' }}>
-          <button
-            onClick={this.toggleView}
-            style={{ textTransform: 'capitalize' }}
-          >
-            {this.nextView()}
+          <button onClick={() => this.setState({ view: 'twoquals' })}>
+            Twoquals
+          </button>
+          <button onClick={() => this.setState({ view: 'threequals' })}>
+            Threequals
           </button>
         </div>
 
