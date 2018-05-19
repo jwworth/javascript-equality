@@ -6,7 +6,6 @@ class App extends React.Component {
     return (
       <div
         style={{
-          padding: '30px',
           textAlign: 'center',
           fontSize: '14px',
           color: '#3d3d3d',
@@ -90,15 +89,11 @@ class EqualityChart extends React.Component {
     const { axis, dataModel, view } = this.state;
 
     return (
-      <div
-        style={{
-          display: 'inlineBlock',
-        }}
-      >
-        <div style={{ paddingBottom: '30px' }}>
+      <div style={{ margin: 'auto', width: '600px' }}>
+        <div style={{ marginBottom: '60px' }}>
           <h2>{view} {this.viewIcon(view)}</h2>
         </div>
-        <table style={{ margin: '0 auto', marginBottom: '20px' }}>
+        <table style={{ marginBottom: '20px' }}>
           <thead>
             <tr>
               <td />
@@ -138,7 +133,33 @@ class EqualityChart extends React.Component {
             ))}
           </tbody>
         </table>
-        <button onClick={this.toggleView}>{this.nextView()}</button>
+
+        <div style={{ marginBottom: '20px' }}>
+          <button onClick={this.toggleView}>{this.nextView()}</button>
+        </div>
+
+        <div style={{ marginBottom: '20px' }}>
+          This application shows the JavaScript value-comparison operators
+          {' '}
+          <code>==</code>
+          {' '}
+          and
+          {' '}
+          <code>===</code>
+          {' '}
+          in action. It is written in React.js and inspired by the
+          {' '}
+          <a href="https://dorey.github.io/JavaScript-Equality-Table/">
+            JavaScript Equality Table
+          </a>.
+
+        </div>
+
+        <div>
+          <a href="https://github.com/jwworth/javascript-equality">
+            Source code
+          </a>
+        </div>
       </div>
     );
   }
