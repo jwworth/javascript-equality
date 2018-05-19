@@ -83,7 +83,7 @@ class EqualityChart extends React.Component {
     }
   };
 
-  viewIcon = view => (view === 'twoquals' ? "('==')" : "('===')");
+  viewIcon = view => (view === 'twoquals' ? '==' : '===');
 
   render() {
     const { axis, dataModel, view } = this.state;
@@ -91,7 +91,9 @@ class EqualityChart extends React.Component {
     return (
       <div style={{ margin: 'auto', width: '600px' }}>
         <div style={{ marginBottom: '60px' }}>
-          <h2>{view} {this.viewIcon(view)}</h2>
+          <h2 style={{ textTransform: 'capitalize' }}>
+            {view} (<code>{this.viewIcon(view)}</code>)
+          </h2>
         </div>
         <table style={{ marginBottom: '20px' }}>
           <thead>
@@ -135,7 +137,12 @@ class EqualityChart extends React.Component {
         </table>
 
         <div style={{ marginBottom: '20px' }}>
-          <button onClick={this.toggleView}>{this.nextView()}</button>
+          <button
+            onClick={this.toggleView}
+            style={{ textTransform: 'capitalize' }}
+          >
+            {this.nextView()}
+          </button>
         </div>
 
         <div style={{ marginBottom: '20px' }}>
