@@ -13,13 +13,13 @@ class App extends React.Component {
         }}
       >
         <h1>JavaScript Equality</h1>
-        <Equals />
+        <EqualityChart />
       </div>
     );
   }
 }
 
-class Equals extends React.Component {
+class EqualityChart extends React.Component {
   constructor(props) {
     super(props);
 
