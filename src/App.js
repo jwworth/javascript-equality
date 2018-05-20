@@ -62,8 +62,6 @@ class EqualityChart extends React.Component {
     NaN,
   ];
 
-  nextView = () => (this.state.view === 'twoquals' ? 'threequals' : 'twoquals');
-
   displayName = value => {
     if (
       typeof value === 'object' ||
