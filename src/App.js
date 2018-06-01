@@ -112,7 +112,7 @@ class EqualityChart extends React.Component {
                   <td
                     key={index}
                     style={{
-                      background: cell[view] ? '#654EA3' : '#fff',
+                      background: cell[view] ? '#654ea3' : '#fff',
                       width: '20px',
                       height: '20px',
                       border: '1px solid #d3d3d3',
