@@ -1,22 +1,18 @@
 import './normalize.css';
 import React from 'react';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div
-        style={{
-          textAlign: 'center',
-          fontSize: '14px',
-          color: '#3d3d3d',
-        }}
-      >
-        <h1>JavaScript Equality</h1>
-        <EqualityChart />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div
+    style={{
+      color: '#3d3d3d',
+      fontSize: '14px',
+      textAlign: 'center',
+    }}
+  >
+    <h1>JavaScript Equality</h1>
+    <EqualityChart />
+  </div>
+);
 
 class EqualityChart extends React.Component {
   constructor(props) {
@@ -139,20 +135,31 @@ class EqualityChart extends React.Component {
         </div>
 
         <div style={{ marginBottom: '20px' }}>
-          This application shows the JavaScript value-comparison operators
-          {' '}
-          <code>==</code>
-          {' '}
-          and
-          {' '}
-          <code>===</code>
-          {' '}
-          in action. It is written in React.js and inspired by the
-          {' '}
-          <a href="https://dorey.github.io/JavaScript-Equality-Table/">
-            JavaScript Equality Table
-          </a>.
-
+          <p>
+            This application shows the JavaScript value-comparison operators
+            {' '}
+            <code>==</code>
+            {' '}
+            and
+            {' '}
+            <code>===</code>
+            {' '}
+            in action. It is written in React.js and inspired by the
+            {' '}
+            <a href="https://dorey.github.io/JavaScript-Equality-Table/">
+              JavaScript Equality Table
+            </a>.
+          </p>
+          <p>
+            To quote Douglas Crawford: "My advice is to never use the evil twins. Instead, always use
+            {' '}
+            <code>===</code>
+            {' '}
+            and
+            {' '}
+            <code>!==</code>
+            ."
+          </p>
         </div>
 
         <div>

@@ -4,6 +4,10 @@ This application shows the JavaScript value-comparison operators `==` and `===`
 in action. It is written in React.js and inspired by the [JavaScript Equality
 Table](https://dorey.github.io/JavaScript-Equality-Table/).
 
+To quote Douglas Crawford:
+
+> My advice is to never use the evil twins. Instead, always use `===` and `!==`.
+
 https://javascript-equality.herokuapp.com/
 
 ### Setup
