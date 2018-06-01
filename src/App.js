@@ -60,11 +60,10 @@ class EqualityChart extends React.Component {
 
   displayName = value => {
     if (
-      typeof value === 'object' ||
       value instanceof Object ||
       value instanceof Array ||
-      typeof value === 'string' ||
-      value instanceof String
+      value instanceof String ||
+      typeof value === 'string'
     ) {
       return JSON.stringify(value);
     } else {
