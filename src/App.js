@@ -160,13 +160,13 @@ class EqualityChart extends React.Component {
             <code>!==</code>
             ."
           </p>
+          <p>
+            <a href="https://github.com/jwworth/javascript-equality">
+              Source code
+            </a>
+          </p>
         </div>
 
-        <div>
-          <a href="https://github.com/jwworth/javascript-equality">
-            Source code
-          </a>
-        </div>
       </div>
     );
   }
