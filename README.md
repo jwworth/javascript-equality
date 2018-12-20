@@ -1,7 +1,7 @@
 # JavaScript Equality
 
 This application shows the JavaScript value-comparison operators `==` and `===`
-in action. It is written in React.js and inspired by the [JavaScript Equality
+in action. It is written in React.js and TypeScript and inspired by the [JavaScript Equality
 Table](https://dorey.github.io/JavaScript-Equality-Table/).
 
 To quote Douglas Crawford:
