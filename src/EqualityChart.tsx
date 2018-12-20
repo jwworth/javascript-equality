@@ -1,21 +1,17 @@
-import './normalize.css';
 import React from 'react';
 
-const App = () => (
-  <div
-    style={{
-      color: '#3d3d3d',
-      fontSize: '14px',
-      textAlign: 'center',
-    }}
-  >
-    <h1>JavaScript Equality</h1>
-    <EqualityChart />
-  </div>
-);
+type EqualityChartState = {
+  axis: any[];
+  dataModel: {
+    [index: string]: boolean;
+    twoquals: boolean;
+    threequals: boolean;
+  }[][];
+  view: string;
+};
 
-class EqualityChart extends React.Component {
-  constructor(props) {
+class EqualityChart extends React.Component<{}, EqualityChartState> {
+  constructor(props: object) {
     super(props);
 
     const comparatorArray = this.axis().map(() => this.axis().slice(0));
@@ -58,7 +54,7 @@ class EqualityChart extends React.Component {
     NaN,
   ];
 
-  displayName = value => {
+  displayName = (value: any) => {
     if (
       value instanceof Object ||
       value instanceof Array ||
@@ -71,7 +67,7 @@ class EqualityChart extends React.Component {
     }
   };
 
-  viewIcon = view => (view === 'twoquals' ? '==' : '===');
+  viewIcon = (view: string) => (view === 'twoquals' ? '==' : '===');
 
   render() {
     const { axis, dataModel, view } = this.state;
@@ -105,9 +101,7 @@ class EqualityChart extends React.Component {
           <tbody>
             {dataModel.map((row, index) => (
               <tr key={index}>
-                <th scope="row">
-                  {this.displayName(axis[index])}
-                </th>
+                <th scope="row">{this.displayName(axis[index])}</th>
                 {row.map((cell, index) => (
                   <td
                     key={index}
@@ -135,28 +129,17 @@ class EqualityChart extends React.Component {
 
         <div style={{ marginBottom: '20px' }}>
           <p>
-            This application shows the JavaScript value-comparison operators
-            {' '}
-            <code>==</code>
-            {' '}
-            and
-            {' '}
-            <code>===</code>
-            {' '}
-            in action. It is written in React.js and inspired by the
-            {' '}
+            This application shows the JavaScript value-comparison operators{' '}
+            <code>==</code> and <code>===</code> in action. It is written in
+            React.js and inspired by the{' '}
             <a href="https://dorey.github.io/JavaScript-Equality-Table/">
               JavaScript Equality Table
-            </a>.
+            </a>
+            .
           </p>
           <p>
-            To quote Douglas Crawford: "My advice is to never use the evil twins. Instead, always use
-            {' '}
-            <code>===</code>
-            {' '}
-            and
-            {' '}
-            <code>!==</code>
+            To quote Douglas Crawford: "My advice is to never use the evil
+            twins. Instead, always use <code>===</code> and <code>!==</code>
             ."
           </p>
           <p>
@@ -165,10 +148,9 @@ class EqualityChart extends React.Component {
             </a>
           </p>
         </div>
-
       </div>
     );
   }
 }
 
-export default App;
+export default EqualityChart;
