@@ -28,9 +28,10 @@ const App: React.FunctionComponent<{}> = () => {
 
   return (
     <div className="app">
-      <h1>
+      <h1>JavaScript Equality</h1>
+      <h2>
         {view} (<code>{viewIcon(view)}</code>)
-      </h1>
+      </h2>
       <table>
         <thead>
           <tr>
