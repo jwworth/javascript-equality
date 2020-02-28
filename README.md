@@ -8,7 +8,7 @@ To quote Douglas Crawford:
 
 > My advice is to never use the evil twins. Instead, always use `===` and `!==`.
 
-https://javascript-equality.herokuapp.com/
+https://javascript-equality.now.sh/
 
 ### Setup
 
