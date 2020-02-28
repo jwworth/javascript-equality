@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './css/normalize.css';
 import './css/app.css';
 
 type AppState = {
