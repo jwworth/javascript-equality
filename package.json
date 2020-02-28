@@ -7,8 +7,8 @@
     "@types/node": "^10.12.17",
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
     "react-scripts": "2.1.0",
     "typescript": "^3.2.2"
   },
@@ -16,14 +16,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "eject": "react-scripts eject"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "heroku-run-build-script": true
+  ]
 }

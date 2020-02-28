@@ -1,5 +1,5 @@
 name: javascript-equality
-url: https://javascript-equality.herokuapp.com/
+url: https://javascript-equality.now.sh/
 banner: true
 description: |
   Demonstrates the JavaScript value-comparison operators == and ===.
