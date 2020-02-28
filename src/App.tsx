@@ -28,9 +28,9 @@ const App: React.FunctionComponent<{}> = () => {
 
   return (
     <div className="app">
-      <h2>
+      <h1>
         {view} (<code>{viewIcon(view)}</code>)
-      </h2>
+      </h1>
       <table>
         <thead>
           <tr>
