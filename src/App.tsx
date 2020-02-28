@@ -53,7 +53,7 @@ const App: React.FunctionComponent<{}> = () => {
                   className="cell"
                   key={index}
                   style={{
-                    background: (cell as any)[view] ? '#654ea3' : 'inherit',
+                    background: (cell as any)[view] ? '#52ae99' : 'inherit',
                   }}
                 />
               ))}
