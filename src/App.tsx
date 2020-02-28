@@ -75,26 +75,16 @@ class App extends React.Component<{}, AppState> {
     const { axis, dataModel, view } = this.state;
 
     return (
-      <>
-        <div style={{ marginBottom: '60px' }}>
-          <h2 style={{ textTransform: 'capitalize' }}>
-            {view} (<code>{this.viewIcon(view)}</code>)
-          </h2>
-        </div>
+      <div className="app">
+        <h2>
+          {view} (<code>{this.viewIcon(view)}</code>)
+        </h2>
         <table style={{ marginBottom: '20px' }}>
           <thead>
             <tr>
               <td />
               {axis.map((value, index) => (
-                <th
-                  scope="col"
-                  key={index}
-                  style={{
-                    transform: 'rotate(-90deg)',
-                    maxWidth: '20px',
-                    maxHeight: '20px',
-                  }}
-                >
+                <th scope="col" key={index} className="columnName">
                   {this.displayName(value)}
                 </th>
               ))}
@@ -103,16 +93,14 @@ class App extends React.Component<{}, AppState> {
           <tbody>
             {dataModel.map((row, index) => (
               <tr key={index}>
-                <th scope="row">{this.displayName(axis[index])}</th>
+                <th scope="row" className="rowName">
+                  {this.displayName(axis[index])}
+                </th>
                 {row.map((cell, index) => (
                   <td
                     key={index}
-                    style={{
-                      background: cell[view] ? '#654ea3' : '#fff',
-                      width: '20px',
-                      height: '20px',
-                      border: '1px solid #d3d3d3',
-                    }}
+                    className="cell"
+                    style={{ background: cell[view] ? '#654ea3' : '#fff' }}
                   />
                 ))}
               </tr>
@@ -150,7 +138,7 @@ class App extends React.Component<{}, AppState> {
             </a>
           </p>
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -1,7 +1,36 @@
 body {
+  margin: auto;
+  width: 600px;
+}
+
+.app {
   color: #3d3d3d;
   font-size: 14px;
   text-align: center;
-  margin: auto;
-  width: 600px;
+  margin-top: 50px;
+}
+
+h2 {
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+
+.columnName {
+  color: #716868;
+  font-weight: lighter;
+  transform: rotate(-90deg);
+  max-width: 20px;
+  height: 5rem;
+}
+
+.rowName {
+  color: #716868;
+  font-weight: lighter;
+  width: 5rem;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d3d3d3;
 }
