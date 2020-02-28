@@ -29,8 +29,16 @@ h2 {
   width: 5rem;
 }
 
+table {
+  margin-bottom: 40px;
+}
+
 .cell {
   width: 20px;
   height: 20px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid #d4d4d4;
+}
+
+.padding_bottom {
+  margin-bottom: 20px;
 }

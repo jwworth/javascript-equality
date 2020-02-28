@@ -79,7 +79,7 @@ class App extends React.Component<{}, AppState> {
         <h2>
           {view} (<code>{this.viewIcon(view)}</code>)
         </h2>
-        <table style={{ marginBottom: '20px' }}>
+        <table>
           <thead>
             <tr>
               <td />
@@ -98,9 +98,9 @@ class App extends React.Component<{}, AppState> {
                 </th>
                 {row.map((cell, index) => (
                   <td
-                    key={index}
                     className="cell"
-                    style={{ background: cell[view] ? '#654ea3' : '#fff' }}
+                    key={index}
+                    style={{ background: cell[view] ? '#654ea3' : 'inherit' }}
                   />
                 ))}
               </tr>
@@ -108,7 +108,7 @@ class App extends React.Component<{}, AppState> {
           </tbody>
         </table>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="padding_bottom">
           <button onClick={() => this.setState({ view: 'twoquals' })}>
             Twoquals
           </button>
@@ -117,7 +117,7 @@ class App extends React.Component<{}, AppState> {
           </button>
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
+        <div className="padding_bottom">
           <p>
             This application shows the JavaScript value-comparison operators{' '}
             <code>==</code> and <code>===</code> in action. It is written in
