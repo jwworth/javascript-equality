@@ -43,6 +43,11 @@ table {
   width: 20px;
   height: 20px;
   border: 1px solid #d4d4d4;
+  background: inherit;
+}
+
+.equal {
+  background: #52ae99;
 }
 
 .padding_bottom {
@@ -51,4 +56,9 @@ table {
 
 button {
   margin: 0.5rem;
+}
+
+button.active {
+  background: #52ae99;
+  color: #fff;
 }

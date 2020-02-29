@@ -3,13 +3,17 @@ import './css/skeleton.css';
 import './css/app.css';
 
 import React, { useState } from 'react';
+import classNames from 'classnames';
 
 import { generateAxis, generateModel } from './utils/generators';
 
+const twoquals = 'twoquals';
+const threequals = 'threequals';
+
 const App: React.FunctionComponent<{}> = () => {
-  const [axis, setAxis] = useState(generateAxis);
-  const [dataModel, setDataModel] = useState(generateModel);
-  const [view, setView] = useState('twoquals');
+  const [axis, _setAxis] = useState(generateAxis);
+  const [dataModel, _setDataModel] = useState(generateModel);
+  const [view, setView] = useState(twoquals);
 
   const displayName = (value: any): string => {
     if (
@@ -24,8 +28,9 @@ const App: React.FunctionComponent<{}> = () => {
     }
   };
 
-  const viewIcon = (view: string): string =>
-    view === 'twoquals' ? '==' : '===';
+  const twoqualsView = view === twoquals;
+  const threequalsView = !twoqualsView;
+  const viewIcon = (view: string): string => (twoqualsView ? '==' : '===');
 
   return (
     <div className="app">
@@ -52,11 +57,8 @@ const App: React.FunctionComponent<{}> = () => {
               </th>
               {row.map((cell, index) => (
                 <td
-                  className="cell"
                   key={index}
-                  style={{
-                    background: (cell as any)[view] ? '#52ae99' : 'inherit',
-                  }}
+                  className={classNames('cell', { equal: (cell as any)[view] })}
                 />
               ))}
             </tr>
@@ -65,8 +67,18 @@ const App: React.FunctionComponent<{}> = () => {
       </table>
 
       <div className="padding_bottom">
-        <button onClick={() => setView('twoquals')}>Twoquals</button>
-        <button onClick={() => setView('threequals')}>Threequals</button>
+        <button
+          className={classNames({ active: twoqualsView })}
+          onClick={() => setView(twoquals)}
+        >
+          Twoquals
+        </button>
+        <button
+          className={classNames({ active: threequalsView })}
+          onClick={() => setView(threequals)}
+        >
+          Threequals
+        </button>
       </div>
 
       <div className="padding_bottom">
