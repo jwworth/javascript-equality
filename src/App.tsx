@@ -1,6 +1,6 @@
 import './css/normalize.css';
 import './css/skeleton.css';
-import './css/app.css';
+import './css/app.scss';
 
 import React, { useState } from 'react';
 import classNames from 'classnames';
