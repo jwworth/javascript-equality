@@ -80,9 +80,8 @@ const App: React.FunctionComponent<{}> = () => {
           .
         </p>
         <p>
-          To quote Douglas Crawford: "My advice is to never use the evil twins.
-          Instead, always use <code>===</code> and <code>!==</code>
-          ."
+          "My advice is to never use the evil twins. Instead, always use{' '}
+          <code>===</code> and <code>!==</code>." — Douglas Crawford
         </p>
         <p>
           <a href="https://github.com/jwworth/javascript-equality">
