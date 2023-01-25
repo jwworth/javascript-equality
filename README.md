@@ -8,13 +8,13 @@ To quote Douglas Crawford:
 
 > My advice is to never use the evil twins. Instead, always use `===` and `!==`.
 
-https://javascript-equality.now.sh/
+https://javascript-equality.vercel.app/
 
 ### Setup
 
 ```
-$ git clone https://github.com/jwworth/javascript-equality.git
-$ cd conway
+$ git clone https://javascript-equality.vercel.app/
+$ cd javascript-equality
 $ yarn
 $ yarn start
 ```
