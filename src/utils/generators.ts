@@ -27,7 +27,6 @@ const comparatorArray = generateAxis().map(() => generateAxis().slice(0));
 export const generateModel = () =>
   generateAxis().map((xValue, index) =>
     comparatorArray[index].map((yValue) => ({
-      // eslint-disable-next-line
       twoquals: yValue == xValue,
       threequals: yValue === xValue,
     })),

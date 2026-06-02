@@ -1,16 +1,16 @@
-import './css/normalize.css';
-import './css/skeleton.css';
-import './css/app.scss';
+import 'css/normalize.css';
+import 'css/skeleton.css';
+import 'css/app.scss';
 
 import React, {useState} from 'react';
 import classNames from 'classnames';
 
-import {generateAxis, generateModel} from './utils/generators';
+import {generateAxis, generateModel} from 'utils/generators';
 
 const twoquals = 'twoquals';
 const threequals = 'threequals';
 
-const App: React.FunctionComponent<{}> = () => {
+const App = () => {
   const [axis, _setAxis] = useState(generateAxis);
   const [dataModel, _setDataModel] = useState(generateModel);
   const [view, setView] = useState(twoquals);
