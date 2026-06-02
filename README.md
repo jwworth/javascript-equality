@@ -1,19 +1,21 @@
 # JavaScript Equality
 
-This application shows the JavaScript value-comparison operators `==` and `===`
-in action. It is written in React.js and TypeScript and inspired by the
-[JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/).
-
-To quote Douglas Crawford:
+This application demonstrates the JavaScript value-comparison operators `==` and
+`===`. Each filled square indicates that applying the selected operator to the
+values represented by that row and column evaluates to `true`.
 
 > My advice is to never use the evil twins. Instead, always use `===` and `!==`.
+> —Douglas Crawford
 
-https://javascript-equality.vercel.app/
+It is written in React.js and TypeScript and inspired by the
+[JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/).
+
+[Production deployment](https://javascript-equality.vercel.app/)
 
 ### Setup
 
 ```
-$ git clone https://javascript-equality.vercel.app/
+$ git clone https://github.com/jwworth/javascript-equality
 $ cd javascript-equality
 $ npm install
 $ npm start
