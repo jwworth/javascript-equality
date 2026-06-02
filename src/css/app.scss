@@ -29,7 +29,7 @@ body {
 
   h2 {
     text-transform: capitalize;
-    margin-bottom: 2rem;
+    padding-bottom: 2.5rem;
   }
 
   .columnName {
@@ -79,5 +79,16 @@ body {
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 85%;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    color: $gray;
+    font-style: italic;
+  }
+
+  blockquote cite {
+    margin-bottom: 0;
   }
 }

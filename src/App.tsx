@@ -44,7 +44,7 @@ const App: React.FunctionComponent<{}> = () => {
             <td />
             {axis.map((value, index) => (
               <th scope="col" key={index} className="columnName">
-                {displayName(value)}
+                <code>{displayName(value)}</code>
               </th>
             ))}
           </tr>
@@ -53,7 +53,7 @@ const App: React.FunctionComponent<{}> = () => {
           {dataModel.map((row, index) => (
             <tr key={index}>
               <th scope="row" className="rowName">
-                {displayName(axis[index])}
+                <code>{displayName(axis[index])}</code>
               </th>
               {row.map((cell, index) => (
                 <td
@@ -83,22 +83,20 @@ const App: React.FunctionComponent<{}> = () => {
 
       <div className="padding_bottom">
         <p>
-          This application shows the JavaScript value-comparison operators{' '}
-          <code>==</code> and <code>===</code> in action. It is written in
-          React.js and inspired by the{' '}
-          <a href="https://dorey.github.io/JavaScript-Equality-Table/">
-            JavaScript Equality Table
-          </a>
-          .
+          This application demonstrates the JavaScript value-comparison
+          operators <code>==</code> and <code>===</code>. Each filled square
+          indicates that applying the selected operator to the values
+          represented by that row and column evaluates to <code>true</code>.
         </p>
+        <blockquote>
+          <p>
+            "My advice is to never use the evil twins. Instead, always use{' '}
+            <code>===</code> and <code>!==</code>."
+          </p>
+          <cite>—Douglas Crawford</cite>
+        </blockquote>
         <p>
-          "My advice is to never use the evil twins. Instead, always use{' '}
-          <code>===</code> and <code>!==</code>." — Douglas Crawford
-        </p>
-        <p>
-          <a href="https://github.com/jwworth/javascript-equality">
-            Source code
-          </a>
+          <a href="https://github.com/jwworth/javascript-equality">Code</a>
         </p>
       </div>
     </div>
