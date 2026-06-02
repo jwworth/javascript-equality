@@ -15,14 +15,14 @@ https://javascript-equality.vercel.app/
 ```
 $ git clone https://javascript-equality.vercel.app/
 $ cd javascript-equality
-$ yarn
-$ yarn start
+$ npm install
+$ npm start
 ```
 
 ### Testing
 
 ```
-$ yarn test
+$ npm test
 ```
 
 ### License
