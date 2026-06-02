@@ -1,6 +1,6 @@
-$blue: #0073e6;
-$black: #3d3d3d;
-$gray: oklch(70.7% 0.022 261.325);
+$blue: #005fcc;
+$black: #2e2e2e;
+$gray: #5f6b7a;
 
 body {
   margin: auto;
@@ -70,5 +70,14 @@ body {
 
   .padding_bottom {
     margin-bottom: 1rem;
+  }
+
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f1f3f5;
+    color: $blue;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 85%;
   }
 }

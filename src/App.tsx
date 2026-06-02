@@ -71,13 +71,13 @@ const App: React.FunctionComponent<{}> = () => {
           className={classNames({active: twoqualsView})}
           onClick={() => setView(twoquals)}
         >
-          Twoquals
+          Show Twoquals
         </button>
         <button
           className={classNames({active: threequalsView})}
           onClick={() => setView(threequals)}
         >
-          Threequals
+          Show Threequals
         </button>
       </div>
 
