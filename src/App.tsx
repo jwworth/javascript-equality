@@ -2,10 +2,10 @@ import './css/normalize.css';
 import './css/skeleton.css';
 import './css/app.scss';
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import classNames from 'classnames';
 
-import { generateAxis, generateModel } from './utils/generators';
+import {generateAxis, generateModel} from './utils/generators';
 
 const twoquals = 'twoquals';
 const threequals = 'threequals';
@@ -58,7 +58,7 @@ const App: React.FunctionComponent<{}> = () => {
               {row.map((cell, index) => (
                 <td
                   key={index}
-                  className={classNames('cell', { equal: (cell as any)[view] })}
+                  className={classNames('cell', {equal: (cell as any)[view]})}
                 />
               ))}
             </tr>
@@ -68,13 +68,13 @@ const App: React.FunctionComponent<{}> = () => {
 
       <div className="padding_bottom">
         <button
-          className={classNames({ active: twoqualsView })}
+          className={classNames({active: twoqualsView})}
           onClick={() => setView(twoquals)}
         >
           Twoquals
         </button>
         <button
-          className={classNames({ active: threequalsView })}
+          className={classNames({active: threequalsView})}
           onClick={() => setView(threequals)}
         >
           Threequals

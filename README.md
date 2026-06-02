@@ -1,8 +1,8 @@
 # JavaScript Equality
 
 This application shows the JavaScript value-comparison operators `==` and `===`
-in action. It is written in React.js and TypeScript and inspired by the [JavaScript Equality
-Table](https://dorey.github.io/JavaScript-Equality-Table/).
+in action. It is written in React.js and TypeScript and inspired by the
+[JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/).
 
 To quote Douglas Crawford:
 
@@ -27,4 +27,5 @@ $ npm test
 
 ### License
 
-This project is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+This project is released under the
+[MIT License](http://www.opensource.org/licenses/MIT).
