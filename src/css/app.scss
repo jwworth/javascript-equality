@@ -53,9 +53,21 @@ body {
     height: 20px;
     border: 1px solid $gray;
     background: inherit;
+    opacity: 0;
 
     &.equal {
       background: $blue;
+      opacity: 1;
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   }
 
