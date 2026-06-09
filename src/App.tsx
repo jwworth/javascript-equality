@@ -13,7 +13,7 @@ const threequals = 'threequals';
 const App = () => {
   const [axis, _setAxis] = useState(generateAxis);
   const [dataModel, _setDataModel] = useState(generateModel);
-  const [view, setView] = useState(twoquals);
+  const [view, setView] = useState(threequals);
 
   const displayName = (value: any): string => {
     if (
@@ -71,13 +71,13 @@ const App = () => {
           className={classNames({active: twoqualsView})}
           onClick={() => setView(twoquals)}
         >
-          Show Twoquals
+          Twoquals
         </button>
         <button
           className={classNames({active: threequalsView})}
           onClick={() => setView(threequals)}
         >
-          Show Threequals
+          Threequals
         </button>
       </div>
 
