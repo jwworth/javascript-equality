@@ -93,7 +93,7 @@ const App = () => {
             "My advice is to never use the evil twins. Instead, always use{' '}
             <code>===</code> and <code>!==</code>."
           </p>
-          <cite>—Douglas Crawford</cite>
+          <cite>—Douglas Crockford</cite>
         </blockquote>
         <p>
           <a href="https://github.com/jwworth/javascript-equality">Code</a>
